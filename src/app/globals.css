@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Form Field Focus Animation */
+.cl-formFieldInput:focus {
+  animation: inputFocus 0.4s ease-out;
+}
+
+@keyframes inputFocus {
+  from {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.2);
+  }
+  to {
+    transform: scale(1);
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1);
+  }
+}
+
+/* Social Button Hover Effect */
+.cl-socialButtonsBlockButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.1);
+}
+
+/* Background Pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(13, 148, 136, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Floating Decorative Element */
+.floating-deco {
+  animation: float 4s ease-in-out infinite;
+  background: linear-gradient(45deg, #0d9488, #059669);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+
+
+
+
+
+
+
+
+/* Social Button Icons */
+.cl-socialButtonsBlockButton__github {
+  background: url('/public/d2.jpeg') no-repeat 14px center/20px;
+  padding-left: 46px !important;
+}
+
+.cl-socialButtonsBlockButton__google {
+  background: url('/google-icon.svg') no-repeat 14px center/20px;
+  padding-left: 46px !important;
+}
+
+/* Form Field Structure */
+.cl-formFieldRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.cl-formFieldFirstName,
+.cl-formFieldLastName {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Input Fields */
+.cl-formFieldInput {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+/* Continue Button */
+.cl-formButtonPrimary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+/* Alternative Actions */
+.cl-footerActionLink {
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+/* Cart Counter Badge */
+.cart-badge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background: #0d9488;
+  color: white;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+
+
+
+
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #f39c12;
+  opacity: 0;
+  animation: confetti-fall 5s linear infinite;
+}
+
+.confetti-0 { background-color: #f39c12; }
+.confetti-1 { background-color: #e74c3c; }
+.confetti-2 { background-color: #3498db; }
+.confetti-3 { background-color: #2ecc71; }
+.confetti-4 { background-color: #9b59b6; }
+.confetti-5 { background-color: #f1c40f; }
+.confetti-6 { background-color: #e67e22; }
+.confetti-7 { background-color: #1abc9c; }
+.confetti-8 { background-color: #34495e; }
+.confetti-9 { background-color: #d35400; }
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  } 
+   100% {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+} 
